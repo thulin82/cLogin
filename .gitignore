@@ -2,3 +2,4 @@
 /cache
 coverage.clover
 test.php
+/db
