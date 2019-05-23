@@ -1,4 +1,5 @@
 # [cLogin](https://github.com/thulin82/cLogin)
+[![Build Status](https://travis-ci.com/thulin82/cLogin.svg?branch=master)](https://travis-ci.com/thulin82/cLogin)
 
 ## Requirements
 
