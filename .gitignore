@@ -3,3 +3,4 @@
 coverage.clover
 test.php
 /db
+/report
