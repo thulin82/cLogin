@@ -7,7 +7,7 @@ class Connect
     /**
      * [__construct description]
      *
-     * @param [type] $dsn [description]
+     * @param string $dsn [description]
      */
     public function __construct($dsn)
     {
@@ -23,9 +23,9 @@ class Connect
     /**
      * [addUser description]
      *
-     * @param [type] $user [description]
-     * @param [type] $name [description]
-     * @param [type] $pass [description]
+     * @param string $user [description]
+     * @param string $name [description]
+     * @param string $pass [description]
      */
     public function addUser($user, $name, $pass)
     {
@@ -37,8 +37,7 @@ class Connect
     /**
      * [deleteUser description]
      *
-     * @param  [type] $user [description]
-     * @return [type]       [description]
+     * @param  string $user [description]
      */
     public function deleteUser($user)
     {
@@ -49,8 +48,8 @@ class Connect
     /**
      * [getHash description]
      *
-     * @param  [type] $user [description]
-     * @return [type]       [description]
+     * @param  string $user [description]
+     * @return string       [description]
      */
     public function getHash($user)
     {
@@ -65,9 +64,8 @@ class Connect
     /**
      * [changePassword description]
      *
-     * @param  [type] $user [description]
-     * @param  [type] $pass [description]
-     * @return [type]       [description]
+     * @param  string $user [description]
+     * @param  string $pass [description]
      */
     public function changePassword($user, $pass)
     {
@@ -79,8 +77,8 @@ class Connect
     /**
      * [exists description]
      *
-     * @param  [type] $user [description]
-     * @return [type]       [description]
+     * @param  string $user [description]
+     * @return bool       [description]
      */
     public function exists($user)
     {
@@ -93,9 +91,9 @@ class Connect
     /**
      * [verifyUser description]
      *
-     * @param  [type] $user [description]
-     * @param  [type] $pass [description]
-     * @return [type]       [description]
+     * @param  string $user [description]
+     * @param  string $pass [description]
+     * @return bool       [description]
      */
     public function verifyUser($user, $pass)
     {
