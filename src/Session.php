@@ -82,7 +82,7 @@ class Session
      */
     public function delete($key)
     {
-        if (self::has($key)) {
+        if ($this->has($key)) {
             unset($_SESSION[$key]);
         }
     }
@@ -94,6 +94,6 @@ class Session
      */
     public function dump()
     {
-        var_dump($_SESSION);
+        echo "<pre>" . print_r($_SESSION, 1) . "</pre>";
     }
 }
