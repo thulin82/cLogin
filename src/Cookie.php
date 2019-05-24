@@ -48,7 +48,7 @@ class Cookie
      *
      * @param  string $key
      * @param  boolean $default
-     * @return void
+     * @return bool
      */
     public function get($key, $default = false)
     {
