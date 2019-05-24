@@ -40,4 +40,18 @@ class ConnectTest extends \PHPUnit\Framework\TestCase
         $var = $this->_test->getHash("user");
         $this->assertNotEquals($var, "pass", "Hash and password equal");
     }
+
+    public function testChangePassword()
+    {
+        $this->_test->addUser("user", "name", "pass");
+        $var = $this->_test->verifyUser("user", "pass");
+        $this->assertEquals($var, true, "AddUser failed");
+
+        $this->_test->changePassword("user", "pass2");
+
+        $var = $this->_test->verifyUser("user", "pass");
+        $this->assertEquals($var, false, "ChangePassword failed");
+        $var = $this->_test->verifyUser("user", "pass2");
+        $this->assertEquals($var, true, "ChangePassword failed");
+    }
 }
