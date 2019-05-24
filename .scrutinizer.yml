@@ -1,0 +1,40 @@
+checks:
+    php: 
+        code_rating: true 
+        parameters_in_camelcaps: true 
+        parameter_doc_comments: true 
+        no_short_method_names: 
+            minimum: '3' 
+        no_short_variable_names: 
+            minimum: '3' 
+        return_doc_comments: true 
+        no_goto: true 
+        more_specific_types_in_doc_comments: true 
+        return_doc_comment_if_not_inferrable: true 
+        simplify_boolean_return: true 
+        param_doc_comment_if_not_inferrable: true 
+        naming_conventions: 
+            local_variable: '^[a-z][a-zA-Z0-9]*$' 
+            abstract_class_name: ^Abstract|Factory$ 
+            utility_class_name: 'Utils?$' 
+            constant_name: '^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$' 
+            property_name: '^[a-z][a-zA-Z0-9]*$' 
+            method_name: '^(?:[a-z]|__)[a-zA-Z0-9]*$' 
+            parameter_name: '^[a-z][a-zA-Z0-9]*$' 
+            interface_name: '^[A-Z][a-zA-Z0-9]*Interface$' 
+            type_name: '^[A-Z][a-zA-Z0-9]*$' 
+            exception_name: '^[A-Z][a-zA-Z0-9]*Exception$' 
+            isser_method_name: '^(?:is|has|should|may|supports)' 
+        duplication: false 
+filter:
+    excluded_paths: [test/*, db/*]
+tools:
+    external_code_coverage: true 
+build: 
+    nodes: 
+        tests: true 
+        analysis: 
+            tests: 
+                override: 
+                     - phpcs-run --standard=.phpcs.xml
+                     - php-scrutinizer-run
