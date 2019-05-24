@@ -8,7 +8,8 @@ class Cookie
     /**
      * [__construct description]
      *
-     * @param [type] $time [description]
+     * @param int    $time [description]
+     * @param string $pf
      */
     public function __construct($time = 86400*30, $pf = "Web")
     {
@@ -16,16 +17,22 @@ class Cookie
         $this->platform = $pf;
     }
         
-
+    /**
+     * Undocumented function
+     *
+     * @param  string $key
+     * @return string $key
+     */
     public function has($key)
     {
+        return $key;
     }
     
     /**
      * [set description]
      *
-     * @param [type] $key [description]
-     * @param [type] $val [description]
+     * @param string $key [description]
+     * @param string $val [description]
      */
     public function set($key, $val)
     {
@@ -36,7 +43,13 @@ class Cookie
         }
     }
     
-
+    /**
+     * Undocumented function
+     *
+     * @param  string $key
+     * @param  boolean $default
+     * @return void
+     */
     public function get($key, $default = false)
     {
         if (isset($_COOKIE[$key])) {
@@ -46,21 +59,31 @@ class Cookie
         }
     }
     
-
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function dump()
     {
         echo "<pre>" . htmlentities(print_r($_COOKIE, 1)) . "</pre>";
     }
     
-
+    /**
+     * Undocumented function
+     *
+     * @param  string $key
+     * @return string $key 
+     */
     public function delete($key)
     {
+        return $key;
     }
     
     /**
-     * [destroy description]
+     * Undocumented function
      *
-     * @return [type] [description]
+     * @return void
      */
     public function destroy()
     {

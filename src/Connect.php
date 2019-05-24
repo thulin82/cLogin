@@ -97,7 +97,7 @@ class Connect
      */
     public function verifyUser($user, $pass)
     {
-        $crypt_pass = self::getHash($user);
+        $crypt_pass = self->getHash($user);
         $verified = password_verify($pass, $crypt_pass);
         return $verified;
     }
