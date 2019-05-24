@@ -7,7 +7,7 @@ class Session
     /**
      * [__construct description]
      *
-     * @param string $name [description]
+     * @param string string [description]
      */
     public function __construct($name = "MYSESSION")
     {
@@ -16,9 +16,9 @@ class Session
     }
 
     /**
-     * [start description]
+     * Undocumented function
      *
-     * @return [type] [description]
+     * @return void
      */
     public function start()
     {
@@ -33,7 +33,7 @@ class Session
     /**
      * [has description]
      *
-     * @param  [type]  $key [description]
+     * @param  string  $key [description]
      * @return boolean      [description]
      */
     public function has($key)
@@ -44,8 +44,8 @@ class Session
     /**
      * [set description]
      *
-     * @param [type] $key [description]
-     * @param [type] $val [description]
+     * @param string $key [description]
+     * @param string $val [description]
      */
     public function set($key, $val)
     {
@@ -55,9 +55,9 @@ class Session
     /**
      * [get description]
      *
-     * @param  [type]  $key     [description]
+     * @param  string  $key     [description]
      * @param  boolean $default [description]
-     * @return [type]           [description]
+     * @return mixed           [description]
      */
     public function get($key, $default = false)
     {
@@ -65,9 +65,9 @@ class Session
     }
 
     /**
-     * [destroy description]
+     * Undocumented function
      *
-     * @return [type] [description]
+     * @return void
      */
     public function destroy()
     {
@@ -75,10 +75,10 @@ class Session
     }
 
     /**
-     * [delete description]
+     * Undocumented function
      *
-     * @param  [type] $key [description]
-     * @return [type]      [description]
+     * @param  string $key
+     * @return void
      */
     public function delete($key)
     {
@@ -88,9 +88,9 @@ class Session
     }
 
     /**
-     * [dump description]
+     * Undocumented function
      *
-     * @return [type] [description]
+     * @return void
      */
     public function dump()
     {
