@@ -41,6 +41,11 @@ class ConnectTest extends \PHPUnit\Framework\TestCase
         $this->assertNotEquals($var, "pass", "Hash and password equal");
     }
 
+    /**
+     * Testing changePassword()
+     *
+     * @return void
+     */
     public function testChangePassword()
     {
         $this->_test->addUser("user", "name", "pass");
@@ -53,5 +58,17 @@ class ConnectTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($var, false, "ChangePassword failed");
         $var = $this->_test->verifyUser("user", "pass2");
         $this->assertEquals($var, true, "ChangePassword failed");
+    }
+
+    /**
+     * Testing Exception in constructor
+     *
+     * @expectedException PDOException
+     *
+     * @return void
+     */
+    public function testMissingDSN()
+    {
+        $this->_test2 = new Connect("testytest");
     }
 }
