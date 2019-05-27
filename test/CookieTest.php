@@ -56,4 +56,31 @@ class CookieTest extends TestCase
         $res = $this->_test->has("key");
         $this->assertTrue($res, "Key not found");
     }
+
+    /**
+     * Testing Delete()
+     *
+     * @return void
+     */
+    public function testDelete()
+    {
+        $this->_test->set("key", "value");
+        $res = $this->_test->has("key");
+        $this->assertTrue($res, "Key not found");
+        $this->_test->delete("key");
+        $res = $this->_test->has("key");
+        $this->assertFalse($res, "Key still found");
+    }
+
+    /**
+     * Testing dump()
+     *
+     * @return void
+     */
+    public function testDump()
+    {
+        $this->_test->set("key", "value");
+        $res = $this->_test->dump();
+        $this->assertEquals($res, "<pre>Array\n(\n    [key] =&gt; value\n)\n</pre>", "Dump is not working");
+    }
 }

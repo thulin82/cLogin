@@ -79,11 +79,11 @@ class Cookie
     /**
      * Undocumented function
      *
-     * @return void
+     * @return string
      */
     public function dump()
     {
-        echo "<pre>" . htmlentities(print_r($_COOKIE, 1)) . "</pre>";
+        return "<pre>" . htmlentities(print_r($_COOKIE, 1)) . "</pre>";
     }
     
     /**
