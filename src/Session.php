@@ -27,11 +27,10 @@ class Session
      */
     public function start()
     {
-        session_name($this->name);
-
         if (!empty(session_id())) {
             session_destroy();
         }
+        session_name($this->name);
         session_start();
     }
 

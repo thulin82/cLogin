@@ -69,4 +69,17 @@ class SessionTest extends TestCase
         $res = $this->_test->dump();
         $this->assertEquals($res, "<pre>Array\n(\n    [key] => value\n)\n</pre>", "Dump is not working");
     }
+
+    /**
+     * Testing to start again
+     *
+     * @return void
+     */
+    public function testStartAgain()
+    {
+        $this->_test->start();
+        $this->_test->set("key", "value");
+        $res = $this->_test->has("key");
+        $this->assertTrue($res, "Key not found");
+    }
 }
