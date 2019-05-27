@@ -2,12 +2,17 @@
 
 class Connect
 {
+    /**
+     * The PDO object
+     *
+     * @var mixed $db PDO object
+     */
     private $db;
 
     /**
-     * [__construct description]
+     * Constructor
      *
-     * @param string $dsn [description]
+     * @param string $dsn DSN
      */
     public function __construct($dsn)
     {
@@ -21,11 +26,13 @@ class Connect
     }
 
     /**
-     * [addUser description]
+     * Add a user
      *
-     * @param string $user [description]
-     * @param string $name [description]
-     * @param string $pass [description]
+     * @param string $user User ID
+     * @param string $name User Name
+     * @param string $pass User Password
+     *
+     * @return void
      */
     public function addUser($user, $name, $pass)
     {
@@ -37,7 +44,9 @@ class Connect
     /**
      * [deleteUser description]
      *
-     * @param  string $user [description]
+     * @param string $user [description]
+     *
+     * @return void
      */
     public function deleteUser($user)
     {
@@ -48,7 +57,8 @@ class Connect
     /**
      * [getHash description]
      *
-     * @param  string $user [description]
+     * @param string $user [description]
+     *
      * @return string       [description]
      */
     public function getHash($user)
@@ -64,8 +74,10 @@ class Connect
     /**
      * [changePassword description]
      *
-     * @param  string $user [description]
-     * @param  string $pass [description]
+     * @param string $user [description]
+     * @param string $pass [description]
+     *
+     * @return void
      */
     public function changePassword($user, $pass)
     {
@@ -77,8 +89,9 @@ class Connect
     /**
      * [exists description]
      *
-     * @param  string $user [description]
-     * @return bool       [description]
+     * @param string $user [description]
+     *
+     * @return bool [description]
      */
     public function exists($user)
     {
@@ -91,9 +104,10 @@ class Connect
     /**
      * [verifyUser description]
      *
-     * @param  string $user [description]
-     * @param  string $pass [description]
-     * @return bool       [description]
+     * @param string $user [description]
+     * @param string $pass [description]
+     *
+     * @return bool [description]
      */
     public function verifyUser($user, $pass)
     {

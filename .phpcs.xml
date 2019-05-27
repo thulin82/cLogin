@@ -11,9 +11,43 @@
     <exclude-pattern>test/config.php</exclude-pattern>
     <exclude-pattern>vendor</exclude-pattern>
     <exclude-pattern>db</exclude-pattern>
+    <exclude-pattern>report</exclude-pattern>
 
     <arg name="encoding" value="utf-8"/>
     <arg name="warning-severity" value="0"/>
+
+    <!-- Include the whole PEAR standard -->
+    <rule ref="PEAR">
+        <exclude name="PEAR.NamingConventions.ValidFunctionName"/>
+        <exclude name="PEAR.NamingConventions.ValidVariableName"/>
+        <exclude name="PEAR.Commenting.ClassComment"/>
+        <exclude name="PEAR.Commenting.FileComment.Missing"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingLinkTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingVersion"/>
+        <exclude name="PEAR.Commenting.InlineComment"/>
+    </rule>
+
+        <!-- Include some sniffs from other standards that don't conflict with PEAR -->
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+    <rule ref="Squiz.Arrays.ArrayDeclaration"/>
+    <rule ref="Squiz.Commenting.BlockComment"/>
+    <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+    <rule ref="Squiz.Commenting.EmptyCatchComment"/>
+    <rule ref="Squiz.Commenting.InlineComment"/>
+    <rule ref="Squiz.Commenting.LongConditionClosingComment"/>
+    <rule ref="Squiz.Commenting.PostStatementComment"/>
+    <rule ref="Squiz.Commenting.VariableComment"/>
+    <rule ref="Generic.NamingConventions.ConstructorName"/>
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+    <rule ref="Generic.PHP.LowerCaseKeyword"/>
+    <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
+    <rule ref="PSR2.Classes.PropertyDeclaration"/>
+    <rule ref="PSR2.Methods.MethodDeclaration"/>
+    <rule ref="PSR2.Files.EndFileNewline"/>
+    <rule ref="Zend.Files.ClosingTag"/>
 
     <rule ref="PSR2">
         <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>

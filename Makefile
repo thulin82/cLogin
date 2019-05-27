@@ -77,7 +77,7 @@ database-seed:
 #
 # target: test                    - Run tests
 .PHONY: test
-test: test-phpunit
+test: test-phpunit test-phpcs
 
 
 # target: test-phpunit            - Run PHPUnit according to phpunit.xml.dist.

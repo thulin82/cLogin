@@ -2,12 +2,17 @@
 
 class Session
 {
+    /**
+     * Session name
+     *
+     * @var string $name Name
+     */
     private $name;
 
     /**
-     * [__construct description]
+     * Constructor
      *
-     * @param string string [description]
+     * @param string $name Session name
      */
     public function __construct($name = "MYSESSION")
     {
@@ -16,7 +21,7 @@ class Session
     }
 
     /**
-     * Undocumented function
+     * Start the session
      *
      * @return void
      */
@@ -33,7 +38,8 @@ class Session
     /**
      * [has description]
      *
-     * @param  string  $key [description]
+     * @param string $key [description]
+     *
      * @return boolean      [description]
      */
     public function has($key)
@@ -46,6 +52,8 @@ class Session
      *
      * @param string $key [description]
      * @param string $val [description]
+     *
+     * @return void
      */
     public function set($key, $val)
     {
@@ -55,8 +63,9 @@ class Session
     /**
      * [get description]
      *
-     * @param  string  $key     [description]
-     * @param  boolean $default [description]
+     * @param string  $key     [description]
+     * @param boolean $default [description]
+     *
      * @return mixed           [description]
      */
     public function get($key, $default = false)
@@ -77,7 +86,8 @@ class Session
     /**
      * Undocumented function
      *
-     * @param  string $key
+     * @param string $key [description]
+     *
      * @return void
      */
     public function delete($key)

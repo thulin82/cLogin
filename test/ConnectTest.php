@@ -1,20 +1,42 @@
 <?php
 
-class ConnectTest extends \PHPUnit\Framework\TestCase
+use \PHPUnit\Framework\TestCase;
+
+class ConnectTest extends TestCase
 {
+    /**
+     * The Test object
+     *
+     * @var mixed $_test The test object
+     */
     private $_test;
 
+    /**
+     * This method is called before each test
+     *
+     * @return void
+     */
     public function setUp()
     {
         $fileName = __DIR__ . "/../db/users.sqlite";
         $this->_test = new Connect("sqlite:$fileName");
     }
 
+    /**
+     * This method is called after each test
+     *
+     * @return void
+     */
     public function tearDown()
     {
         $this->_test->deleteUser("user");
     }
 
+    /**
+     * Testing addUser()
+     *
+     * @return void
+     */
     public function testAddUser()
     {
         $this->_test->addUser("user", "name", "pass");
@@ -24,6 +46,11 @@ class ConnectTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($var, false, "Negative AddUser failed");
     }
 
+    /**
+     * Testing deleteUser()
+     *
+     * @return void
+     */
     public function testDeleteUser()
     {
         $this->_test->addUser("user", "name", "pass");
@@ -34,6 +61,11 @@ class ConnectTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($var, false, "DeleteUser failed");
     }
 
+    /**
+     * Testing getHash()
+     *
+     * @return void
+     */
     public function testGetHash()
     {
         $this->_test->addUser("user", "name", "pass");

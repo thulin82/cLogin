@@ -2,14 +2,27 @@
 
 class Cookie
 {
+    /**
+     * Expire time
+     *
+     * @var integer $expire Expire time
+     */
     private $expire;
+
+    /**
+     * Platform used
+     *
+     * @var string $platform Platform used
+     */
     private $platform;
 
     /**
-     * [__construct description]
+     * Constructor
      *
-     * @param int    $time [description]
-     * @param string $pf
+     * @param int    $time Expiry time, default 30 days
+     * @param string $pf   Platform
+     *
+     * @return void
      */
     public function __construct($time = 86400*30, $pf = "Web")
     {
@@ -18,21 +31,24 @@ class Cookie
     }
         
     /**
-     * Undocumented function
+     * Check if key exists in $_COOKIE
      *
-     * @param  string $key
-     * @return string $key
+     * @param string $key The key to check for
+     *
+     * @return bool true if it exists, otherwise false
      */
     public function has($key)
     {
-        return $key;
+        return array_key_exists($key, $_COOKIE);
     }
     
     /**
-     * [set description]
+     * Set cookie
      *
-     * @param string $key [description]
-     * @param string $val [description]
+     * @param string $key The name of the cookie
+     * @param string $val The value of the cookie
+     *
+     * @return void
      */
     public function set($key, $val)
     {
@@ -44,10 +60,11 @@ class Cookie
     }
     
     /**
-     * Undocumented function
+     * Get cookie
      *
-     * @param  string $key
-     * @param  boolean $default
+     * @param string  $key     The key to get from $_COOKIE
+     * @param boolean $default The default value returned
+     *
      * @return bool
      */
     public function get($key, $default = false)
@@ -72,12 +89,15 @@ class Cookie
     /**
      * Undocumented function
      *
-     * @param  string $key
-     * @return string $key 
+     * @param string $key The key to delete from $_COOKIE
+     *
+     * @return string $key
      */
     public function delete($key)
     {
-        return $key;
+        if (isset($_COOKIE[$key])) {
+            unset($_COOKIE[$key]);
+        }
     }
     
     /**

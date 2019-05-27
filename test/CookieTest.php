@@ -1,19 +1,41 @@
 <?php
 
-class CookieTest extends \PHPUnit\Framework\TestCase
+use \PHPUnit\Framework\TestCase;
+
+class CookieTest extends TestCase
 {
+    /**
+     * The Test object
+     *
+     * @var mixed $_test The test object
+     */
     private $_test;
 
+    /**
+     * This method is called before each test
+     *
+     * @return void
+     */
     public function setUp()
     {
         $this->_test = new Cookie(200, "CLI");
     }
 
+    /**
+     * This method is called after each test
+     *
+     * @return void
+     */
     public function tearDown()
     {
         $this->_test->destroy();
     }
 
+    /**
+     * Testing Set() and Get()
+     *
+     * @return void
+     */
     public function testSetGetCookie()
     {
         $this->_test->set("key", "value");
@@ -21,5 +43,17 @@ class CookieTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($res, "value", "GetSetCookie failed");
         $res2 = $this->_test->get("wrongKey");
         $this->assertEquals($res2, false, "Negative GetSetCookie failed");
+    }
+
+    /**
+     * Testing Has()
+     *
+     * @return void
+     */
+    public function testHas()
+    {
+        $this->_test->set("key", "value");
+        $res = $this->_test->has("key");
+        $this->assertTrue($res, "Key not found");
     }
 }
