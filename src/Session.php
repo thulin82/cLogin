@@ -100,10 +100,10 @@ class Session
     /**
      * Undocumented function
      *
-     * @return void
+     * @return string
      */
     public function dump()
     {
-        echo "<pre>" . print_r($_SESSION, 1) . "</pre>";
+        return "<pre>" . print_r($_SESSION, 1) . "</pre>";
     }
 }
