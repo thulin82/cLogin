@@ -1,10 +1,6 @@
 # [cLogin](https://github.com/thulin82/cLogin)
 
 [![GitHub Actions](https://github.com/thulin82/cLogin/actions/workflows/github-actions.yml/badge.svg)](https://github.com/thulin82/cLogin/actions/workflows/github-actions.yml)
-[![Build Status](https://travis-ci.com/thulin82/cLogin.svg?branch=master)](https://travis-ci.com/thulin82/cLogin)
-[![Build Status](https://scrutinizer-ci.com/g/thulin82/cLogin/badges/build.png?b=master)](https://scrutinizer-ci.com/g/thulin82/cLogin/build-status/master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/thulin82/cLogin/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/thulin82/cLogin/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/thulin82/cLogin/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/thulin82/cLogin/?branch=master)
 
 ## Requirements
 
