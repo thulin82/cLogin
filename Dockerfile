@@ -1,4 +1,6 @@
-FROM php:7.4-apache
+FROM php:8.2-apache
+RUN apt-get update && \
+    apt-get install -y git zip unzip
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 RUN a2enmod rewrite
 #Install Composer
