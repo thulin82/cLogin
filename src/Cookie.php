@@ -91,7 +91,7 @@ class Cookie
      *
      * @param string $key The key to delete from $_COOKIE
      *
-     * @return string $key
+     * @return void
      */
     public function delete($key)
     {

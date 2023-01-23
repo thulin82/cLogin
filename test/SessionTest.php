@@ -16,7 +16,7 @@ class SessionTest extends TestCase
      *
      * @return void
      */
-    public function setUp()
+    protected function setUp() : void
     {
         $this->_test = new Session("TestSession");
     }
@@ -26,7 +26,7 @@ class SessionTest extends TestCase
      *
      * @return void
      */
-    public function tearDown()
+    protected function tearDown() : void
     {
         $this->_test->destroy();
     }
