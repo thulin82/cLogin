@@ -16,7 +16,7 @@ class CookieTest extends TestCase
      *
      * @return void
      */
-    public function setUp()
+    protected function setUp() : void
     {
         $this->_test = new Cookie(200, "CLI");
     }
@@ -26,7 +26,7 @@ class CookieTest extends TestCase
      *
      * @return void
      */
-    public function tearDown()
+    protected function tearDown() : void
     {
         $this->_test->destroy();
     }

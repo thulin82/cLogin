@@ -16,7 +16,7 @@ class ConnectTest extends TestCase
      *
      * @return void
      */
-    public function setUp()
+    protected function setUp() : void
     {
         $fileName = __DIR__ . "/../db/users.sqlite";
         $this->_test = new Connect("sqlite:$fileName");
@@ -27,7 +27,7 @@ class ConnectTest extends TestCase
      *
      * @return void
      */
-    public function tearDown()
+    protected function tearDown() : void
     {
         $this->_test->deleteUser("user");
     }
@@ -101,6 +101,7 @@ class ConnectTest extends TestCase
      */
     public function testMissingDSN()
     {
+        $this->expectException(PDOException::class);
         $this->_test2 = new Connect("testytest");
     }
 }

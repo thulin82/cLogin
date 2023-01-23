@@ -9,12 +9,11 @@
             }
     ],
     "require": {
-        "php": ">=7.1",
-        "robmorgan/phinx": "v0.8.*",
-        "fzaninotto/faker": "v1.6.*",
-        "phpstan/phpstan": "v0.11.*",
-        "squizlabs/php_codesniffer": "3.4.*",
-        "phpunit/phpunit": "v7.5.*"
+        "php": ">=7.4",
+        "robmorgan/phinx": "v0.13.*",
+        "phpstan/phpstan": "v1.9.*",
+        "squizlabs/php_codesniffer": "3.7.*",
+        "phpunit/phpunit": "v9.5.*"
     },
     "autoload": {
         "psr-4": {"": ["src/", "test/"]}
