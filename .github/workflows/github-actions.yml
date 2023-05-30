@@ -2,9 +2,9 @@ name: GitHub Actions
 
 on:
     push:
-        branches: [master]
+        branches: [main]
     pull_request:
-        branches: [master]
+        branches: [main]
 
 jobs:
     tests:
@@ -12,7 +12,7 @@ jobs:
 
         strategy:
             matrix:
-                php-versions: ['8.0', '8.1', '8.2']
+                php-versions: ["8.0", "8.1", "8.2"]
 
         steps:
             - uses: actions/checkout@v3
@@ -37,11 +37,11 @@ jobs:
             - name: Install dependencies
               run: composer install --prefer-dist --no-progress
 
-            - name: 'Run tests with phpunit'
-              run: 'vendor/bin/phpunit'
+            - name: "Run tests with phpunit"
+              run: "vendor/bin/phpunit"
 
-            - name: 'Run tests with phpcs'
-              run: 'vendor/bin/phpcs --standard=.phpcs.xml'
+            - name: "Run tests with phpcs"
+              run: "vendor/bin/phpcs --standard=.phpcs.xml"
 
-            - name: 'Run tests with phpstan'
-              run: 'vendor/bin/phpstan analyze src'
+            - name: "Run tests with phpstan"
+              run: "vendor/bin/phpstan analyze src"
