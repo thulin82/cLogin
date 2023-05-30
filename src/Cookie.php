@@ -87,12 +87,12 @@ class Cookie
     }
     
     /**
-    * Delete cookie
-    *
-    * @param string $key The key to delete from $_COOKIE
-    *
-    * @return void
-    */
+     * Delete cookie
+     *
+     * @param string $key The key to delete from $_COOKIE
+     *
+     * @return void
+     */
     public function delete($key) : void
     {
         if (isset($_COOKIE[$key])) {

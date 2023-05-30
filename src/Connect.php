@@ -43,9 +43,9 @@ class Connect
 
     /**
      * Delete a user
-     * 
+     *
      * @param string $user User ID
-     * 
+     *
      * @return void
      */
     public function deleteUser($user) : void

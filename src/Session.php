@@ -61,10 +61,10 @@ class Session
 
     /**
      * Get session variable
-     * 
+     *
      * @param string $key     The name of the session variable
      * @param mixed  $default The default value to return if the key is not found
-     * 
+     *
      * @return mixed The value of the session variable
      */
     public function get($key, $default = false) : mixed
