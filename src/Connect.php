@@ -34,7 +34,7 @@ class Connect
      *
      * @return void
      */
-    public function addUser($user, $name, $pass)
+    public function addUser($user, $name, $pass) : void
     {
         $crypt_pass = password_hash($pass, PASSWORD_DEFAULT);
         $stmt = $this->db->prepare("INSERT into users (user, name, pass) VALUES ('$user', '$name', '$crypt_pass')");
@@ -42,26 +42,26 @@ class Connect
     }
 
     /**
-     * [deleteUser description]
-     *
-     * @param string $user [description]
-     *
+     * Delete a user
+     * 
+     * @param string $user User ID
+     * 
      * @return void
      */
-    public function deleteUser($user)
+    public function deleteUser($user) : void
     {
         $stmt = $this->db->prepare("DELETE FROM users WHERE user='$user'");
         $stmt->execute();
     }
 
     /**
-     * [getHash description]
+     * Get the hash
      *
-     * @param string $user [description]
+     * @param string $user User ID
      *
-     * @return string       [description]
+     * @return string Hash
      */
-    public function getHash($user)
+    public function getHash($user) : string
     {
         $stmt = $this->db->prepare("SELECT pass FROM users WHERE user='$user'");
         $stmt->execute();
@@ -72,14 +72,14 @@ class Connect
     }
 
     /**
-     * [changePassword description]
+     * Change password
      *
-     * @param string $user [description]
-     * @param string $pass [description]
+     * @param string $user User ID
+     * @param string $pass User Password
      *
      * @return void
      */
-    public function changePassword($user, $pass)
+    public function changePassword($user, $pass) : void
     {
         $crypt_pass = password_hash($pass, PASSWORD_DEFAULT);
         $stmt = $this->db->prepare("UPDATE users SET pass='$crypt_pass' WHERE user='$user'");
@@ -87,13 +87,13 @@ class Connect
     }
 
     /**
-     * [exists description]
+     * Check if user exists
      *
-     * @param string $user [description]
+     * @param string $user User ID
      *
-     * @return bool [description]
+     * @return bool True if user exists, otherwise false
      */
-    public function exists($user)
+    public function exists($user) : bool
     {
         $stmt = $this->db->prepare("SELECT * FROM users WHERE user='$user'");
         $stmt->execute();
@@ -102,14 +102,14 @@ class Connect
     }
 
     /**
-     * [verifyUser description]
+     * Verify user
      *
-     * @param string $user [description]
-     * @param string $pass [description]
+     * @param string $user User ID
+     * @param string $pass User Password
      *
-     * @return bool [description]
+     * @return bool True if user exists, otherwise false
      */
-    public function verifyUser($user, $pass)
+    public function verifyUser($user, $pass) : bool
     {
         $crypt_pass = $this->getHash($user);
         $verified = password_verify($pass, $crypt_pass);

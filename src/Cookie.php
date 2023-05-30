@@ -37,7 +37,7 @@ class Cookie
      *
      * @return bool true if it exists, otherwise false
      */
-    public function has($key)
+    public function has($key) : bool
     {
         return array_key_exists($key, $_COOKIE);
     }
@@ -50,7 +50,7 @@ class Cookie
      *
      * @return void
      */
-    public function set($key, $val)
+    public function set($key, $val) : void
     {
         if ($this->platform == "Web") {
             setcookie($key, $val, $this->expire);
@@ -67,7 +67,7 @@ class Cookie
      *
      * @return bool
      */
-    public function get($key, $default = false)
+    public function get($key, $default = false) : bool
     {
         if (isset($_COOKIE[$key])) {
             return $_COOKIE[$key];
@@ -77,23 +77,23 @@ class Cookie
     }
     
     /**
-     * Undocumented function
+     * Dump $_COOKIE
      *
      * @return string
      */
-    public function dump()
+    public function dump() : string
     {
         return "<pre>" . htmlentities(print_r($_COOKIE, 1)) . "</pre>";
     }
     
     /**
-     * Undocumented function
-     *
-     * @param string $key The key to delete from $_COOKIE
-     *
-     * @return void
-     */
-    public function delete($key)
+    * Delete cookie
+    *
+    * @param string $key The key to delete from $_COOKIE
+    *
+    * @return void
+    */
+    public function delete($key) : void
     {
         if (isset($_COOKIE[$key])) {
             unset($_COOKIE[$key]);
@@ -101,20 +101,30 @@ class Cookie
     }
     
     /**
-     * Undocumented function
+     * Destroy all cookies
      *
      * @return void
      */
-    public function destroy()
+    public function destroy() : void
     {
         if ($this->platform == "Web") {
-            foreach ($_COOKIE as $key => $value) {
-                setcookie($key, $value, time()-3600);
-            }
+            $this->expireAllCookies();
         } else {
             foreach ($_COOKIE as $key => $value) {
                 unset($_COOKIE[$key]);
             }
+        }
+    }
+
+    /**
+     * Expire all cookies
+     *
+     * @return void
+     */
+    private function expireAllCookies() : void
+    {
+        foreach ($_COOKIE as $key => $value) {
+            setcookie($key, $value, time()-3600);
         }
     }
 }

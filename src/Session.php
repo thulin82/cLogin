@@ -25,7 +25,7 @@ class Session
      *
      * @return void
      */
-    public function start()
+    public function start() : void
     {
         if (!empty(session_id())) {
             session_destroy();
@@ -35,61 +35,61 @@ class Session
     }
 
     /**
-     * [has description]
+     * Check if key exists in $_SESSION
      *
-     * @param string $key [description]
+     * @param string $key The key to check for
      *
-     * @return boolean      [description]
+     * @return bool true if it exists, otherwise false
      */
-    public function has($key)
+    public function has($key) : bool
     {
         return array_key_exists($key, $_SESSION);
     }
 
     /**
-     * [set description]
+     * Set session variable
      *
-     * @param string $key [description]
-     * @param string $val [description]
+     * @param string $key The name of the session variable
+     * @param string $val The value of the session variable
      *
      * @return void
      */
-    public function set($key, $val)
+    public function set($key, $val) : void
     {
         $_SESSION[$key] = $val;
     }
 
     /**
-     * [get description]
-     *
-     * @param string  $key     [description]
-     * @param boolean $default [description]
-     *
-     * @return mixed           [description]
+     * Get session variable
+     * 
+     * @param string $key     The name of the session variable
+     * @param mixed  $default The default value to return if the key is not found
+     * 
+     * @return mixed The value of the session variable
      */
-    public function get($key, $default = false)
+    public function get($key, $default = false) : mixed
     {
         return ($this->has($key)) ? $_SESSION[$key] : $default;
     }
 
     /**
-     * Undocumented function
+     * Destroy the session
      *
      * @return void
      */
-    public function destroy()
+    public function destroy() : void
     {
         session_destroy();
     }
 
     /**
-     * Undocumented function
+     * Delete a session variable
      *
-     * @param string $key [description]
+     * @param string $key The name of the session variable
      *
      * @return void
      */
-    public function delete($key)
+    public function delete($key) : void
     {
         if ($this->has($key)) {
             unset($_SESSION[$key]);
@@ -97,11 +97,11 @@ class Session
     }
 
     /**
-     * Undocumented function
+     * Dump the session
      *
      * @return string
      */
-    public function dump()
+    public function dump() : string
     {
         return "<pre>" . print_r($_SESSION, 1) . "</pre>";
     }
