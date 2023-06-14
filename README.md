@@ -12,7 +12,7 @@
 #### Dependencies
 
 ```
-$ make composer-install
+$ composer install
 ```
 
 ## Docker
